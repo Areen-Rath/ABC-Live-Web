@@ -4,6 +4,8 @@ ABC Live is a website that fetches latest BFSI news from Economic Times BFSI and
 
 For the API fetching the news headlines from these sources, refer to [ABC Live Web API](https://github.com/Areen-Rath/ABC-Live-Web-API).
 
+To go to the website, click  [here](https://abclive-bfsi.vercel.app/).
+
 # Running Locally
 
 The website is built on React using Next.js framework.PNPM is used as the package manager.
