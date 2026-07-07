@@ -10,7 +10,7 @@ The website is built on React using Next.js framework.PNPM is used as the packag
 
 ```bash
 # Clone the project
-git clone git@github.com:Areen-Rath/ABC-Live-Web.git
+git clone https://github.com/Areen-Rath/ABC-Live-Web.git
 
 # Change directory
 cd ABC-Live-Web
