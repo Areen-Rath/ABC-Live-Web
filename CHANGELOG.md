@@ -5,3 +5,4 @@
 # v1.0.1
 
 * Make the entire news card clickable for touchscreen
+* Making all news cards have uniform dimensions

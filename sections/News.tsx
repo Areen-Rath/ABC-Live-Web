@@ -10,7 +10,7 @@ export default function News({ newsList, source }: { newsList: object[], source:
     return newsList.map((news: any) => {
         return (
             <a href={news.link} target="_blank">
-                <Card key={`${source} ${newsList.indexOf(news)}`} className="group flex flex-col border rounded-lg bg-background overflow-hidden">
+                <Card key={`${source} ${newsList.indexOf(news)}`} className="group flex flex-col h-125 border rounded-lg bg-background overflow-hidden">
                     <CardHeader>
                         <CardDescription>
                             Source: {source}
