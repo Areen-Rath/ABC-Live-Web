@@ -11,19 +11,19 @@ export default function News({ newsList, source }: { newsList: NewsItem[], sourc
     return newsList.map((news: any) => {
         return (
             <a key={`${source}-${newsList.indexOf(news)}`} href={news.link} target="_blank" rel="noopener noreferrer">
-                <Card className="group flex flex-col h-125 border rounded-lg bg-background overflow-hidden">
-                    <CardHeader>
-                        <CardDescription>
+                <Card className="group flex flex-col h-100 pt-6 border rounded-lg bg-background overflow-hidden object-cover">
+                    <CardHeader className="h-25">
+                        <CardDescription className="h-5">
                             Source: {source}
                         </CardDescription>
-                        <CardTitle className="mt-2 mb-2 ml-0 mr-0 font-bold text-2xl group-hover:text-blue-800 group-hover:underline">
+                        <CardTitle className="h-25 ml-0 mr-0 font-bold text-lg group-hover:text-blue-800 group-hover:underline">
                             {news.title}
                         </CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="h-45 pt-5 line-clamp-8">
                         {news.desc}
                     </CardContent>
-                    <CardContent className="mt-auto font-bold text-teal-800">
+                    <CardContent className="h-5 mt-2 font-bold text-teal-800">
                         Read Full Story
                     </CardContent>
                 </Card>

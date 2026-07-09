@@ -11,3 +11,7 @@
 
 * Switched from client-side to serve-side rendering
 * Interfaces created for news and rates
+
+# 2.0.1
+
+* Added styles that align the content inside the cards uniformly
