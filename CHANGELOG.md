@@ -15,3 +15,7 @@
 # 2.0.1
 
 * Added styles that align the content inside the cards uniformly
+
+# 2.0.2
+
+* Disabled static site generation
