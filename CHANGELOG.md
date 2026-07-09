@@ -6,3 +6,8 @@
 
 * Make the entire news card clickable for touchscreen
 * Making all news cards have uniform dimensions
+
+# 2.0.0
+
+* Switched from client-side to serve-side rendering
+* Interfaces created for news and rates

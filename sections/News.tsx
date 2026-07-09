@@ -5,12 +5,13 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { NewsItem } from "@/lib/data";
 
-export default function News({ newsList, source }: { newsList: object[], source: string }) {
+export default function News({ newsList, source }: { newsList: NewsItem[], source: string }) {
     return newsList.map((news: any) => {
         return (
-            <a href={news.link} target="_blank">
-                <Card key={`${source} ${newsList.indexOf(news)}`} className="group flex flex-col h-125 border rounded-lg bg-background overflow-hidden">
+            <a key={`${source}-${newsList.indexOf(news)}`} href={news.link} target="_blank" rel="noopener noreferrer">
+                <Card className="group flex flex-col h-125 border rounded-lg bg-background overflow-hidden">
                     <CardHeader>
                         <CardDescription>
                             Source: {source}
