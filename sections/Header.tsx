@@ -23,10 +23,10 @@ export default function Header() {
                     className="rounded-lg"
                 />
                 <section className="place-self-center">
-                    <strong className="block text-[clamp(28px,4vw,52px)] text-black">
+                    <strong className="block text-[clamp(28px,4vw,52px)]">
                         ABC Live
                     </strong>
-                    <span className="block text-gray-600 text-sm font-bold">
+                    <span className="block text-gray-600 dark:text-gray-400 text-sm font-bold">
                         Amit Kumar Rath
                     </span>
                 </section>

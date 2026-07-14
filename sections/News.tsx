@@ -23,7 +23,7 @@ export default function News({ newsList, source }: { newsList: NewsItem[], sourc
                     <CardContent className="h-45 pt-5 line-clamp-8">
                         {news.desc}
                     </CardContent>
-                    <CardContent className="h-5 mt-2 font-bold text-teal-800">
+                    <CardContent className="h-5 mt-2 font-bold text-teal-800 dark:text-teal-200">
                         Read Full Story
                     </CardContent>
                 </Card>

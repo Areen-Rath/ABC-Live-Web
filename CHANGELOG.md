@@ -19,3 +19,7 @@
 # 2.0.2
 
 * Disabled static site generation
+
+# 2.1.0
+
+* Website now uses system theme as its theme
