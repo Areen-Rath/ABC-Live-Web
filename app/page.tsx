@@ -29,7 +29,7 @@ export default async function Home() {
         </section>
       </section>
       <Stats stats={stats} />
-      <section className="grid grid-cols-[minmax(0,1fr)_auto] items-start pb-2.5">
+      <section className="grid grid-cols-[minmax(0,1fr)_auto] items-start pt-2.5 pb-2.5">
         <span className="block text-[clamp(24px,3vw,48px)] font-bold">
           Latest BFSI News
         </span>
