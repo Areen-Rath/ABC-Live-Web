@@ -1,46 +1,37 @@
-interface ApiResponse<T> {
-  data?: T;
-}
-
 export interface NewsItem {
   title: string;
   link: string;
   desc: string;
+  source: string;
 }
 
-export interface RateItem {
+export interface StatItem {
   label: string;
   value: string;
 }
 
 export default async function fetchData() {
-    try {
-        const [resET, resBL, resRBI] = await Promise.all([
-            fetch("https://abc-live-web-api.vercel.app/et_bfsi"),
-            fetch("https://abc-live-web-api.vercel.app/business_line"),
-            fetch("https://abc-live-web-api.vercel.app/rbi"),
-        ]);
+    let newsList: NewsItem[] = [];
+    let statsList: StatItem[] = [];
 
-        const [ET, BL, RBI] = await Promise.all([
-            resET.json() as Promise<ApiResponse<NewsItem[]>>,
-            resBL.json() as Promise<ApiResponse<NewsItem[]>>,
-            resRBI.json() as Promise<ApiResponse<string[][]>>,
-        ]);
+    await fetch("https://abc-live-web-api.vercel.app/")
+        .then(res => res.json())
+        .then(resJSON => {
+            newsList = Array.isArray(resJSON.news) ? resJSON.news : [];
+            const rawStats = Array.isArray(resJSON.stats) ? resJSON.stats : [];
 
-        const et = Array.isArray(ET.data) ? ET.data : [];
-        const bl = Array.isArray(BL.data) ? BL.data : [];
-        const rawRates = Array.isArray(RBI.data) ? RBI.data : [];
+            statsList =
+            rawStats[0] && rawStats[1]
+                ? rawStats[0].map((label: string, index: number) => ({
+                    label,
+                    value: rawStats[1][index] ?? "",
+                }))
+                : [];
+        })
+        .catch(() => {
+            newsList = [];
+            statsList = [];
+        });
 
-        const stats: RateItem[] =
-        rawRates[0] && rawRates[1]
-            ? rawRates[0].map((label, index) => ({
-                label,
-                value: rawRates[1][index] ?? "",
-            }))
-            : [];
-
-        return { ET: et, BL: bl, stats };
-    } catch {
-        return { ET: [] as NewsItem[], BL: [] as NewsItem[], stats: [] as RateItem[] };
-    }
+    return { news: newsList, stats: statsList }
 }

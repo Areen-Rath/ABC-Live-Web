@@ -23,3 +23,7 @@
 # 2.1.0
 
 * Website now uses system theme as its theme
+
+# 2.2.0
+
+* Multiple API calls at multiple endpoints replaced with a single API call at a single endpoint to remove API round-trips

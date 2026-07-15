@@ -4,13 +4,13 @@ import {
     CardTitle,
     CardDescription
 } from "@/components/ui/card";
-import { RateItem } from "@/lib/data";
+import { StatItem } from "@/lib/data";
 
-export default function Stats({ stats }: { stats: RateItem[] }) {
+export default function Stats({ stats }: { stats: StatItem[] }) {
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {
-                stats.map((stat: RateItem) => {
+                stats.map((stat: StatItem) => {
                     return (
                         <Card key={stat.label} className="group flex flex-col border rounded-lg bg-background overflow-hidden">
                             <CardHeader>
